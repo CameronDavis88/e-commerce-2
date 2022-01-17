@@ -1,4 +1,5 @@
-import { Search } from '@material-ui/icons';
+import { Badge } from '@material-ui/core';
+import { Search, ShoppingBasketOutlined } from '@material-ui/icons';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -23,9 +24,13 @@ const Left = styled.div`
 `;
 const Center = styled.div`
     flex: 1;
+    text-align: center;
 `;
 const Right = styled.div`
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 `;
 
 const SearchContainer = styled.div`
@@ -41,8 +46,14 @@ const Input = styled.input`
     // border: none;
 `;
 
-const Logo = styled.div`
+const Logo = styled.h1`
+font-weight: bold;
+`;
 
+const MenuItem = styled.div`
+font-size: 14px;
+cursor: pointer;
+margin-left: 25px;
 `;
 
 
@@ -53,12 +64,22 @@ const Navbar = () => {
             <Wrapper>
                 <Left>
                     <SearchContainer>
-                        <Input />
+                        <Input style={{color: 'grey', fontSize:16}} />
                         <Search />
                     </SearchContainer>
                 </Left>
-                <Center>Center</Center>
-                <Right>Right</Right>
+                <Center>
+                    <Logo>
+Center Logo!
+                    </Logo>
+                </Center>
+                <Right>
+                    <MenuItem>
+                        <Badge badgeContent={5} color='primary' >
+                        <ShoppingBasketOutlined/>
+                        </Badge>
+                    </MenuItem>
+                </Right>
             </Wrapper>
         </Container>
     )
